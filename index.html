@@ -8,80 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root {
-            --crimson: #E63946;
-            --obsidian: #050505;
-        }
-
-        body {
-            background-color: var(--obsidian);
-            color: #F5F5F7;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* Molten Background */
-        .molten-bg {
-            position: fixed;
-            inset: 0;
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 20% 80%, rgba(212, 163, 115, 0.05) 0%, transparent 40%);
-            z-index: -1;
-            filter: blur(80px);
-        }
-
-        /* Shimmer Animation */
-        .shimmer {
-            background: linear-gradient(90deg, #fff, #888, #fff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
-        }
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        /* High-End Button States */
-        .btn-active {
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-crimson {
-            background-color: var(--crimson);
-        }
-        .btn-crimson:hover {
-            background-color: #f14652;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
-        }
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-3px);
-        }
-
-        /* Vibe Stream */
-        @keyframes scrollVibe {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .vibe-stream {
-            display: flex;
-            white-space: nowrap;
-            animation: scrollVibe 40s linear infinite;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        :root { --crimson: #E63946; --obsidian: #050505; }
+        body { background-color: var(--obsidian); color: #F5F5F7; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; overflow-x: hidden; }
+        .molten-bg { position: fixed; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.08) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(212, 163, 115, 0.05) 0%, transparent 40%); z-index: -1; filter: blur(80px); }
+        .shimmer { background: linear-gradient(90deg, #fff, #888, #fff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .btn-active { transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border: none; }
+        .btn-crimson { background-color: var(--crimson); }
+        .btn-crimson:hover { background-color: #f14652; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid rgba(255, 255, 255, 0.2) !important; }
+        .btn-outline:hover { background-color: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.5) !important; transform: translateY(-3px); }
+        @keyframes scrollVibe { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .vibe-stream { display: flex; white-space: nowrap; animation: scrollVibe 40s linear infinite; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        /* Cursor Animation */
+        .cursor { display: inline-block; width: 8px; height: 1.2em; background-color: var(--crimson); margin-left: 4px; animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
@@ -90,11 +32,10 @@
 
     <header class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px); background-size: 40px 40px;"></div>
-        
         <nav class="absolute top-8 w-full px-6 md:px-12 flex justify-between items-center z-50">
             <span class="text-xl font-black tracking-tighter uppercase">VIBECLAW</span>
             <div class="h-px bg-white/10 flex-grow mx-4 md:mx-8 hidden sm:block"></div>
-            <span class="text-[10px] md:text-xs tracking-widest text-gray-500 uppercase">Domain Available</span>
+            <span class="text-[10px] md:text-xs tracking-widest text-gray-500 uppercase font-bold">DOMAIN FOR SALE</span>
         </nav>
 
         <h2 class="text-[10px] md:text-xs uppercase tracking-[0.5em] text-red-500 mb-6 font-bold mt-20">Autonomous Infrastructure</h2>
@@ -106,27 +47,17 @@
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto z-50">
-            <button onclick="window.open('https://www.spaceship.com/domain-search/?query=vibeclaw.com&beast=false&tab=domains', '_blank')" 
+            <button onclick="window.location.href='https://www.spaceship.com/domain-search/?query=vibeclaw.com&beast=false&tab=domains'" 
                class="btn-active btn-crimson text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest w-full sm:w-auto">
                 Buy via Spaceship
             </button>
-            
-            <button onclick="window.open('https://www.godaddy.com/forsale/vibeclaw.com', '_blank')" 
-               class="btn-active btn-outline border border-white/20 text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest w-full sm:w-auto">
+            <button onclick="window.location.href='https://www.godaddy.com/forsale/vibeclaw.com'" 
+               class="btn-active btn-outline text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest w-full sm:w-auto">
                 Buy via GoDaddy
             </button>
         </div>
-        
-        <p class="mt-8 text-[10px] text-gray-600 uppercase tracking-widest">Premium domain. Instant transfer after checkout.</p>
+        <p class="mt-8 text-[10px] text-gray-600 uppercase tracking-widest">Premium domain. Instant transfer.</p>
     </header>
-
-    <section class="py-24 px-6 border-t border-white/5">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-xl md:text-3xl font-light leading-snug">
-                VibeClaw is a <span class="text-white font-semibold">next-generation platform</span> for creating, orchestrating, and scaling AI agents using <span class="italic text-orange-400">natural intent</span> instead of code.
-            </p>
-        </div>
-    </section>
 
     <section class="py-12 border-y border-white/5 bg-white/5 backdrop-blur-sm overflow-hidden">
         <div class="vibe-stream text-2xl md:text-4xl font-bold uppercase tracking-tighter text-gray-700 italic">
@@ -143,73 +74,94 @@
         </div>
     </section>
 
-    <section class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-3 gap-8">
-            <div class="glass p-12 rounded-3xl min-h-[300px] flex flex-col justify-end hover:border-red-500/30 transition-all">
-                <i data-lucide="brain-circuit" class="text-red-500 w-10 h-10 mb-8"></i>
-                <h3 class="text-2xl font-bold mb-4 uppercase">Agent Builders</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Create autonomous agents for sales, support, research, and coding.</p>
-            </div>
-            <div class="glass p-12 rounded-3xl min-h-[300px] flex flex-col justify-end hover:border-orange-500/30 transition-all">
-                <i data-lucide="sparkles" class="text-orange-400 w-10 h-10 mb-8"></i>
-                <h3 class="text-2xl font-bold mb-4 uppercase">Vibe-to-App</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Turn natural language into functional applications in seconds.</p>
-            </div>
-            <div class="glass p-12 rounded-3xl min-h-[300px] flex flex-col justify-end hover:border-red-900/30 transition-all">
-                <i data-lucide="shield-half" class="text-red-800 w-10 h-10 mb-8"></i>
-                <h3 class="text-2xl font-bold mb-4 uppercase">Control Layer</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Monitor and secure all agents from one centralized command center.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6">
+    <section class="py-24 px-6 bg-black/40">
         <div class="max-w-3xl mx-auto glass rounded-2xl overflow-hidden shadow-2xl">
             <div class="bg-white/5 px-6 py-4 flex items-center gap-2">
                 <div class="w-2 h-2 rounded-full bg-red-500/50"></div>
                 <div class="w-2 h-2 rounded-full bg-orange-500/50"></div>
-                <span class="text-[10px] font-mono text-gray-500 ml-4 uppercase tracking-widest">vibeclaw-session</span>
+                <span class="text-[10px] font-mono text-gray-500 ml-4 uppercase">vibeclaw-core</span>
             </div>
-            <div class="p-8 font-mono text-xs md:text-sm leading-relaxed">
-                <p class="text-gray-500 mb-2"># Initializing vibe-driven agent...</p>
-                <p class="text-white mb-2 font-bold"><span class="text-red-500">>>></span> build a startup assistant</p>
-                <p class="text-white mb-4 font-bold"><span class="text-red-500">>>></span> deploy --global</p>
-                <div class="h-px bg-white/5 my-6"></div>
-                <p class="text-green-500 font-bold mb-1">[SUCCESS] Agent live on VibeClaw Mesh.</p>
-                <p class="text-gray-600 italic text-[10px]">Latency: 12ms | Vibe Accuracy: 99.8%</p>
-            </div>
+            <div id="terminal-body" class="p-8 md:p-12 font-mono text-xs md:text-sm leading-relaxed min-h-[250px]">
+                </div>
         </div>
     </section>
 
     <section class="py-32 px-6">
-        <div class="max-w-3xl mx-auto glass p-12 rounded-[2.5rem] text-center border-white/10">
-            <h4 class="text-2xl font-bold mb-8 italic">VibeClaw.com is available for acquisition.</h4>
+        <div class="max-w-3xl mx-auto glass p-10 md:p-16 rounded-[2.5rem] text-center border-white/10">
+            <h4 class="text-2xl md:text-3xl font-bold mb-10 italic">VibeClaw.com is for sale.</h4>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="window.open('https://www.spaceship.com/domain-search/?query=vibeclaw.com&beast=false&tab=domains', '_blank')" 
+                <button onclick="window.location.href='https://www.spaceship.com/domain-search/?query=vibeclaw.com&beast=false&tab=domains'" 
                    class="bg-white text-black px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-gray-200 transition-all">
                     Buy via Spaceship
                 </button>
-                <button onclick="window.open('https://www.godaddy.com/forsale/vibeclaw.com', '_blank')" 
-                   class="border border-white/20 px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
+                <button onclick="window.location.href='https://www.godaddy.com/forsale/vibeclaw.com'" 
+                   class="btn-outline text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-all">
                     Buy via GoDaddy
                 </button>
             </div>
-            <p class="mt-8 text-gray-600 text-[10px] uppercase tracking-widest">Immediate Ownership Transfer</p>
         </div>
     </section>
 
     <footer class="py-40 text-center px-6 border-t border-white/5">
         <div class="max-w-4xl mx-auto">
             <h3 class="text-5xl md:text-8xl font-black tracking-tighter mb-4 uppercase">The future won’t be coded.</h3>
-            <h3 class="text-5xl md:text-8xl font-black tracking-tighter mb-12 text-red-500 uppercase italic">It will be vibed.</h3>
+            <h3 class="text-5xl md:text-8xl font-black tracking-tighter mb-12 text-red-500 uppercase italic">It will be Vibe.</h3>
             <div class="h-20 w-px bg-gradient-to-b from-red-500 to-transparent mx-auto mb-12"></div>
-            <p class="text-[10px] uppercase tracking-[1em] text-gray-500 ml-[1em]">Own VibeClaw.com</p>
+            <p class="text-[10px] uppercase tracking-[1em] text-gray-500 ml-[1em] font-bold">Own VibeClaw.com</p>
         </div>
     </footer>
 
     <script>
-        // Initialize Icons
         lucide.createIcons();
+
+        // Typewriter Logic
+        const lines = [
+            { text: "# Initializing vibe-driven agent...", color: "gray" },
+            { text: ">>> build startup assistant", color: "white" },
+            { text: ">>> apply friendly-vibe-preset", color: "white" },
+            { text: ">>> deploy --mesh", color: "orange" },
+            { text: "[SUCCESS] Agent live on VibeClaw.", color: "green" }
+        ];
+
+        const terminalBody = document.getElementById('terminal-body');
+
+        async function typeLine(lineData) {
+            const p = document.createElement('p');
+            p.className = `mb-2 font-bold`;
+            if (lineData.color === "gray") p.classList.add('text-gray-500');
+            if (lineData.color === "white") p.innerHTML = `<span class="text-red-500">>>></span> `;
+            if (lineData.color === "orange") p.innerHTML = `<span class="text-red-500">>>></span> `;
+            if (lineData.color === "green") p.classList.add('text-green-500');
+
+            terminalBody.appendChild(p);
+
+            const textSpan = document.createElement('span');
+            if (lineData.color === "orange") textSpan.classList.add('text-orange-400');
+            p.appendChild(textSpan);
+
+            const cursor = document.createElement('span');
+            cursor.className = 'cursor';
+            p.appendChild(cursor);
+
+            for (let char of lineData.text) {
+                textSpan.textContent += char;
+                await new Promise(r => setTimeout(r, 40));
+            }
+            cursor.remove();
+        }
+
+        async function runTerminal() {
+            while (true) {
+                terminalBody.innerHTML = '';
+                for (let line of lines) {
+                    await typeLine(line);
+                    await new Promise(r => setTimeout(r, 600));
+                }
+                await new Promise(r => setTimeout(r, 3000)); // Pause before restart
+            }
+        }
+
+        runTerminal();
     </script>
 </body>
 </html>
